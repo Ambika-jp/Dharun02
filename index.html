@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VLC-like Media Player with AI Features</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>🎬 VLC Media Player with AI Features</h2>
+
+  <!-- Video Player -->
+  <video id="videoElement" class="video-player" controls></video>
+
+  <!-- Controls Panel -->
+  <div class="controls">
+    <input type="file" id="videoInput" accept="video/*" onchange="loadVideo()">
+    <button onclick="playPauseVideo()">Play/Pause</button>
+    <button onclick="muteUnmute()">Mute/Unmute</button>
+    <button onclick="toggleFullscreen()">Fullscreen</button>
+    <button onclick="downloadVideo()">Download</button>
+    <button onclick="toggleAIEnhancement()">Toggle AI Enhancement</button>
+    <input type="range" id="seekbar" min="0" max="100" step="1" value="0" onchange="seekVideo()">
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" onchange="adjustVolume()">
+    <label for="speed">Speed:</label>
+    <select id="speed" onchange="changeSpeed()">
+      <option value="0.5">0.5x</option>
+      <option value="1" selected>1x</option>
+      <option value="1.5">1.5x</option>
+      <option value="2">2x</option>
+    </select>
+  </div>
+
+  <canvas id="canvasElement" style="display:none;"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+  <script src="script.js"></script>
+</body>
+</html>

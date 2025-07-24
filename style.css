@@ -1,0 +1,21 @@
+body {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .video-player {
+    max-width: 90%;
+    width: 100%;
+    margin: 10px auto;
+  }
+  
+  .controls {
+    margin-top: 10px;
+  }
+  
+  button, input[type="range"], select {
+    margin: 5px;
+  }
+  
